@@ -165,7 +165,7 @@ export default function Example() {
       </Container>
     {/* <Box> */}
       {/* End hero unit */}
-      <div style={{width:'100vw',height:'260px'}} />
+      <div style={{width:'100vw',height:'160px'}} />
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map(tier => (
@@ -181,7 +181,7 @@ export default function Example() {
                   className={classes.cardHeader}
                 />
                 <CardContent>
-                  
+
                   <ul>
                     {tier.description.map(line => (
                       <Typography component="li" variant="subtitle1" align="center" key={line}>
@@ -200,6 +200,7 @@ export default function Example() {
           ))}
         </Grid>
       </Container>
+      <div style={{width:'100vw',height:'160px'}} />
       {/* Footer */}
       <Container maxWidth="md" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">

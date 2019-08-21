@@ -66,6 +66,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(2),
   },
   footer: {
+    backgroundColor:'white',
     borderTop: `1px solid ${theme.palette.divider}`,
     marginTop: theme.spacing(8),
     paddingTop: theme.spacing(3),
@@ -163,40 +164,40 @@ export default function Example() {
           Plan, Build, Innovate
         </Typography>
       </Container>
-    {/* <Box> */}
+      {/* <Box> */}
       {/* End hero unit */}
       <div style={{width:'100vw',height:'160px'}} />
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map(tier => (
             // Enterprise card is full width at sm breakpoint
-            <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
-              <Card>
-                <CardHeader
-                  title={tier.title}
-                  subheader={tier.subheader}
-                  titleTypographyProps={{ align: 'center' }}
-                  subheaderTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Pro' ? <StarIcon /> : null}
-                  className={classes.cardHeader}
-                />
-                <CardContent>
+              <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
+                <Card>
+                  <CardHeader
+                    title={tier.title}
+                    subheader={tier.subheader}
+                    titleTypographyProps={{ align: 'center' }}
+                    subheaderTypographyProps={{ align: 'center' }}
+                    action={tier.title === 'Pro' ? <StarIcon /> : null}
+                    className={classes.cardHeader}
+                  />
+                  <CardContent>
 
-                  <ul>
-                    {tier.description.map(line => (
-                      <Typography component="li" variant="subtitle1" align="center" key={line}>
-                        {line}
-                      </Typography>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant} color="primary">
-                    {tier.buttonText}
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
+                    <ul>
+                      {tier.description.map(line => (
+                        <Typography component="li" variant="subtitle1" align="center" key={line}>
+                          {line}
+                        </Typography>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardActions>
+                    <Button fullWidth variant={tier.buttonVariant} color="primary">
+                      {tier.buttonText}
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
           ))}
         </Grid>
       </Container>

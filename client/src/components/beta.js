@@ -199,7 +199,7 @@ export default function Example() {
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map(tier => (
             <Grid  item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={6}>
-              <Card style={{height:'400px',overflow:'auto'}}>
+              <Card style={{height:'500px',overflow:'auto'}}>
                 <CardHeader
                   title={tier.title}
                   subheader={tier.subheader}
@@ -209,8 +209,8 @@ export default function Example() {
                   className={classes.cardHeader}
                 />
 
-                <img src='/adg-logo.jpeg' style={{    height: '130px',
-                width: '50%', margin: '0 25%'}}/>
+                <img src='/adg-logo.jpeg' style={{    height: '200px',
+                width: '50%', margin: '5px 25%'}}/>
                 <CardContent>
 
                   <ul>
@@ -241,7 +241,7 @@ export default function Example() {
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map(tier => (
             <Grid  item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={6}>
-              <Card style={{height:'400px',overflow:'auto'}}>
+              <Card style={{height:'450px',overflow:'auto'}}>
                 <CardHeader
                   title={tier.title}
                   subheader={tier.subheader}
@@ -250,6 +250,8 @@ export default function Example() {
                   action={tier.title === 'Pro' ? <StarIcon /> : null}
                   className={classes.cardHeader}
                 />
+                <img src='/adg-logo.jpeg' style={{    height: '200px',
+                width: '50%', margin: '5px 25%'}}/>
                 <CardContent>
 
                   <ul>
@@ -279,7 +281,7 @@ export default function Example() {
       <Container maxWidth="ml" component="main">
         <Grid container spacing={2} alignItems="flex-end">
           {tiers.slice(0,2).map(tier => (
-            <Card style={{height:'400px',overflow:'auto',width:'80vw',margin:'20px auto'}}>
+            <Card style={{height:'550px',overflow:'auto',width:'80vw',margin:'20px auto'}}>
 
               <CardHeader
                 title={tier.title}
@@ -289,8 +291,10 @@ export default function Example() {
                 action={tier.title === 'Pro' ? <StarIcon /> : null}
                 className={classes.cardHeader}
               />
-              <img src='/adg-logo.jpeg' style={{height:'100px',width:'60pc'}}/>
-              <CardContent>
+              <img src='/adg-logo.jpeg' style={{    height: '350px',
+              width: '60%', margin: '5px 20%'}}/>
+
+              <CardContent >
 
                 <ul>
                   {tier.description.map(line => (

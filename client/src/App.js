@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 //import Example from './components/beta';
-import Example from './components/projects';
+//import Example from './components/projects';
+import Example from './components/dashboard';
 
 export const style={
     width:'100vw',

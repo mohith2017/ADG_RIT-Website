@@ -14,7 +14,7 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-
+import Timeline from './timeline.js';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -87,8 +87,15 @@ const tiers = [
     buttonVariant: 'outlined',
   },
   {
+      title: 'Previous Events',
+
+      description: ['Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor '],
+      buttonText: 'learn more',
+      buttonVariant: 'outlined',
+    },
+  {
     title: 'Upcming events',
-    subheader: 'Most popular',
+    // subheader: 'Most popular',
     description: [
       'Lorem ipsum dolor sit amet, ',
       'Lorem ipsum dolor sit amet, '
@@ -129,6 +136,7 @@ const footers = [
   },
 ];
 
+
 export default function Example() {
   const classes = useStyles();
 
@@ -156,9 +164,10 @@ export default function Example() {
           </Button>
         </Toolbar>
       </AppBar>
-      <div style={{width:'100vw',height:'60px'}} />
+      <div style={{width:'100vw',height:'00px'}} />
       {/* Hero unit */}
       {/* <Box boxShadown={10} borderRadius={20} style={{backgroundColor:'white',borderRadius:'12',width:'fit-content',margin:'auto'}}> */}
+
       <Container maxWidth="sm" component="main" className={classes.heroContent} >
         <Typography variant="h2" align="center" color="white" component="p">
           Plan, Build, Innovate
@@ -166,42 +175,137 @@ export default function Example() {
       </Container>
       {/* <Box> */}
       {/* End hero unit */}
-      <div style={{width:'100vw',height:'160px'}} />
-      <Container maxWidth="md" component="main">
+      <div style={{width:'100vw',height:'300px'}} />
+      <Container maxWidth="sm" component="main" className={classes.heroContent} >
+        <Typography variant="h2" align="center" color="white" component="p">
+          Upcoming evets
+        </Typography>
+      </Container>
+      {/*  timeline*/}
+      <Container maxWidth="ml" component="main">
+        <Grid container spacing={5} alignItems="flex-end">
+          <Card rounded={20} style={{height:'400px',overflow:'auto',width:'80vw',margin:'auto'}}>
+            <Timeline />
+          </Card>
+        </Grid>
+      </Container>
+      <div style={{width:'100vw',height:'60px'}} />
+      <Container maxWidth="sm" component="main" className={classes.heroContent} >
+        <Typography variant="h2" align="center" color="white" component="p">
+          something
+        </Typography>
+      </Container>
+      <Container maxWidth="ml" component="main">
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map(tier => (
-            // Enterprise card is full width at sm breakpoint
-              <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
-                <Card>
-                  <CardHeader
-                    title={tier.title}
-                    subheader={tier.subheader}
-                    titleTypographyProps={{ align: 'center' }}
-                    subheaderTypographyProps={{ align: 'center' }}
-                    action={tier.title === 'Pro' ? <StarIcon /> : null}
-                    className={classes.cardHeader}
-                  />
-                  <CardContent>
+            <Grid  item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={6}>
+              <Card style={{height:'400px',overflow:'auto'}}>
+                <CardHeader
+                  title={tier.title}
+                  subheader={tier.subheader}
+                  titleTypographyProps={{ align: 'center' }}
+                  subheaderTypographyProps={{ align: 'center' }}
+                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  className={classes.cardHeader}
+                />
 
-                    <ul>
-                      {tier.description.map(line => (
-                        <Typography component="li" variant="subtitle1" align="center" key={line}>
-                          {line}
-                        </Typography>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <CardActions>
-                    <Button fullWidth variant={tier.buttonVariant} color="primary">
-                      {tier.buttonText}
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
+                <img src='/adg-logo.jpeg' style={{    height: '130px',
+                width: '50%', margin: '0 25%'}}/>
+                <CardContent>
+
+                  <ul>
+                    {tier.description.map(line => (
+                      <Typography component="li" variant="subtitle1" align="center" key={line}>
+                        {line}
+                      </Typography>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardActions>
+                  <Button fullWidth variant={tier.buttonVariant} color="primary">
+                    {tier.buttonText}
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
           ))}
         </Grid>
       </Container>
-      <div style={{width:'100vw',height:'160px'}} />
+      <div style={{width:'100vw',height:'10px',backgroundColor:"white",margin:'80px 0px'}} />
+      <Container maxWidth="sm" component="main" className={classes.heroContent} >
+        <Typography variant="h2" align="center" color="white" component="p">
+          something else
+        </Typography>
+      </Container>
+      <Container maxWidth="ml" component="main">
+        <Grid container spacing={5} alignItems="flex-end">
+          {tiers.map(tier => (
+            <Grid  item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={6}>
+              <Card style={{height:'400px',overflow:'auto'}}>
+                <CardHeader
+                  title={tier.title}
+                  subheader={tier.subheader}
+                  titleTypographyProps={{ align: 'center' }}
+                  subheaderTypographyProps={{ align: 'center' }}
+                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  className={classes.cardHeader}
+                />
+                <CardContent>
+
+                  <ul>
+                    {tier.description.map(line => (
+                      <Typography component="li" variant="subtitle1" align="center" key={line}>
+                        {line}
+                      </Typography>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardActions>
+                  <Button fullWidth variant={tier.buttonVariant} color="primary">
+                    {tier.buttonText}
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+      <div style={{width:'100vw',height:'10px',backgroundColor:"white",margin:'80px 0px'}} />
+      <Container maxWidth="sm" component="main" className={classes.heroContent} >
+        <Typography variant="h2" align="center" color="white" component="p">
+          something somethign else
+        </Typography>
+      </Container>
+      <Container maxWidth="ml" component="main">
+        <Grid container spacing={2} alignItems="flex-end">
+          {tiers.slice(0,2).map(tier => (
+            <Card style={{height:'400px',overflow:'auto',width:'80vw',margin:'20px auto'}}>
+
+              <CardHeader
+                title={tier.title}
+                subheader={tier.subheader}
+                titleTypographyProps={{ align: 'center' }}
+                subheaderTypographyProps={{ align: 'center' }}
+                action={tier.title === 'Pro' ? <StarIcon /> : null}
+                className={classes.cardHeader}
+              />
+              <img src='/adg-logo.jpeg' style={{height:'100px',width:'60pc'}}/>
+              <CardContent>
+
+                <ul>
+                  {tier.description.map(line => (
+                    <Typography component="li" variant="subtitle1" align="center" key={line}>
+                      {line}
+                    </Typography>
+                  ))}
+                </ul>
+              </CardContent>
+
+            </Card>
+
+          ))}
+        </Grid>
+      </Container>
       {/* Footer */}
       <Container maxWidth="md" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">

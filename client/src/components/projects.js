@@ -15,6 +15,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
 import ExpansionPanelActions from '@material-ui/core/ExpansionPanelActions';
 import Divider from '@material-ui/core/Divider';
+import Example from './appbar';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function Copyright() {
@@ -79,18 +80,6 @@ const useStyles= makeStyles(theme => ({
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
-  appBar: {
-    borderBottom: `1px solid ${theme.palette.divider}`,
-  },
-  toolbar: {
-    flexWrap: 'wrap',
-  },
-  toolbarTitle: {
-    flexGrow: 1,
-  },
-  link: {
-    margin: theme.spacing(1, 1.5),
-  },
   footer: {
     backgroundColor:'white',
     borderTop: `1px solid ${theme.palette.divider}`,
@@ -107,22 +96,22 @@ const useStyles= makeStyles(theme => ({
 const tiers = [
   {
     id: '1',
-    title: 'Project 1',
+    title: 'Event Management',
     description: 'description here ......................................................................'
   },
   {
     id: '2',
-    title: 'Project 2',
+    title: 'Automated Attendance System',
     description: 'description here ......................................................................'
   },
   {
     id: '3',
-    title: 'Project 3',
+    title: 'Food Automation',
     description: 'description here ......................................................................'
   },
   {
     id: '4',
-    title: 'Project 4',
+    title: 'Audio Book',
     description: 'description here ......................................................................'
   },
 ];
@@ -153,30 +142,12 @@ export default function SimpleExpansionPanel() {
     <div className={classes.root}>
       <React.Fragment>
       <CssBaseline />
-
-      <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
-          <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-            Open Source Projects
-          </Typography>
-          <nav>
-            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-              Home
-            </Link>
-            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-              About
-            </Link>
-            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-              Contact Us
-            </Link>
-          </nav>
-          <Button href="#" color="primary" variant="outlined" className={classes.link}>
-            LogOut
-          </Button>
-        </Toolbar>
-      </AppBar>
-
+      <Example/>
       <Container maxWidth="md" component="footer" className={classes.footer}>
+      <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
+        Open Source Projects
+      </Typography>
+      <Divider/>
       {tiers.map(tier => (
         <ExpansionPanel>
         <ExpansionPanelSummary

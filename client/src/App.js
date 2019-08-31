@@ -3,8 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SimpleExpansionPanel from './components/projects';
-//import Example from './components/beta';
+import Example from './components/beta';
+//import Example from './components/projects';
+//import Example from './components/signup';
+//import Example from './components/forgotpassword';
 
 export const style={
     width:'100vw',
@@ -26,7 +28,9 @@ class App extends Component {
             <Route path='/hello' Component={SimpleExpansionPanel} />
             <Route path='/projects' Component={SimpleExpansionPanel} />
             {/*  change to dashboard components*/}
-            <Route path='/dashboard' Component={SimpleExpansionPanel} />
+            <Route path='/dashboard' Component={Example} />
+            <Route path='/signup' Component={Example} />
+            <Route path='/resetpassword' Component={Example} />
             </Switch>
           {/* <img src='https://yt3.ggpht.com/a/AGF-l7-wxI7DLGTXjXY0-SYuB7Os-aFHwgmtf4jPUQ=s900-c-k-c0xffffffff-no-rj-mo'/> */}
           {/* <header className="App-header">

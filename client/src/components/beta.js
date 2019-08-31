@@ -14,6 +14,7 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import Bar from './appbar';
 
 function Copyright() {
   return (
@@ -135,27 +136,7 @@ export default function Example() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
-          <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-            Apple developers Group
-          </Typography>
-          <nav>
-            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-              Home
-            </Link>
-            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-              About
-            </Link>
-            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-              Contact Us
-            </Link>
-          </nav>
-          <Button href="#" color="primary" variant="outlined" className={classes.link}>
-            Login
-          </Button>
-        </Toolbar>
-      </AppBar>
+      <Bar/>
       <div style={{width:'100vw',height:'60px'}} />
       {/* Hero unit */}
       {/* <Box boxShadown={10} borderRadius={20} style={{backgroundColor:'white',borderRadius:'12',width:'fit-content',margin:'auto'}}> */}
@@ -200,6 +181,47 @@ export default function Example() {
               </Grid>
           ))}
         </Grid>
+      </Container>
+      <div style={{width:'100vw',height:'160px'}} />
+      <Container maxWidth="md" component="main">
+        <Grid container spacing={5} alignItems="flex-end">
+          {tiers.map(tier => (
+            // Enterprise card is full width at sm breakpoint
+              <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
+                <Card>
+                  <CardHeader
+                    title={tier.title}
+                    subheader={tier.subheader}
+                    titleTypographyProps={{ align: 'center' }}
+                    subheaderTypographyProps={{ align: 'center' }}
+                    action={tier.title === 'Pro' ? <StarIcon /> : null}
+                    className={classes.cardHeader}
+                  />
+                  <CardContent>
+
+                    <ul>
+                      {tier.description.map(line => (
+                        <Typography component="li" variant="subtitle1" align="center" key={line}>
+                          {line}
+                        </Typography>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardActions>
+                    <Button fullWidth variant={tier.buttonVariant} color="primary">
+                      {tier.buttonText}
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+          ))}
+        </Grid>
+      </Container>
+      <div style={{width:'100vw',height:'160px'}} />
+      <Container maxWidth="md" component="main">
+      <Typography variant="h4" align="center" color="black" component="p">
+        Open Source Projects
+      </Typography>
       </Container>
       <div style={{width:'100vw',height:'160px'}} />
       {/* Footer */}

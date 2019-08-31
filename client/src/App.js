@@ -24,9 +24,9 @@ class App extends Component {
       <Switch>
         <div className="App1" style={style}>
           <Switch>
-            <Route path='/' component={SimpleExpansionPanel} />
-            <Route path='/hello' Component={SimpleExpansionPanel} />
-            <Route path='/projects' Component={SimpleExpansionPanel} />
+            <Route path='/' component={Example} />
+            <Route path='/hello' Component={Example} />
+            <Route path='/projects' Component={Example} />
             {/*  change to dashboard components*/}
             <Route path='/dashboard' Component={Example} />
             <Route path='/signup' Component={Example} />
